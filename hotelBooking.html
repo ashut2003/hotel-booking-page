@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:grey
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<form id="bookingForm">
+  <label for="fullName">Full Name</label>
+  <input type="text" id="fullName" name="fullName" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="checkInDate">Check-in Date</label>
+  <input type="date" id="checkInDate" name="checkInDate" required>
+
+  <label for="checkOutDate">Check-out Date</label>
+  <input type="date" id="checkOutDate" name="checkOutDate" required>
+
+  <label for="guests">Number of Guests</label>
+  <input type="number" id="guests" name="guests" required>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Retrieving form data
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const checkInDate = document.getElementById('checkInDate').value;
+    const checkOutDate = document.getElementById('checkOutDate').value;
+    const guests = document.getElementById('guests').value;
+
+    // You can perform actions with this data, such as sending it to a server or displaying it
+    // For this example, let's just log the data to the console
+    console.log('Full Name:', fullName);
+    console.log('Email:', email);
+    console.log('Check-in Date:', checkInDate);
+    console.log('Check-out Date:', checkOutDate);
+    console.log('Number of Guests:', guests);
+  });
+</script>
+
+</body>
+</html>
